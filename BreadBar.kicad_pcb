@@ -41,9 +41,9 @@
 
   (setup
     (stackup
-      (layer "F.SilkS" (type "Top Silk Screen"))
+      (layer "F.SilkS" (type "Top Silk Screen") (color "White"))
       (layer "F.Paste" (type "Top Solder Paste"))
-      (layer "F.Mask" (type "Top Solder Mask") (thickness 0.01))
+      (layer "F.Mask" (type "Top Solder Mask") (color "Purple") (thickness 0.01))
       (layer "F.Cu" (type "copper") (thickness 0.035))
       (layer "dielectric 1" (type "prepreg") (thickness 0.1) (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
       (layer "In1.Cu" (type "copper") (thickness 0.035))
@@ -51,10 +51,10 @@
       (layer "In2.Cu" (type "copper") (thickness 0.035))
       (layer "dielectric 3" (type "prepreg") (thickness 0.1) (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
       (layer "B.Cu" (type "copper") (thickness 0.035))
-      (layer "B.Mask" (type "Bottom Solder Mask") (thickness 0.01))
+      (layer "B.Mask" (type "Bottom Solder Mask") (color "Purple") (thickness 0.01))
       (layer "B.Paste" (type "Bottom Solder Paste"))
-      (layer "B.SilkS" (type "Bottom Silk Screen"))
-      (copper_finish "None")
+      (layer "B.SilkS" (type "Bottom Silk Screen") (color "White"))
+      (copper_finish "ENIG")
       (dielectric_constraints no)
     )
     (pad_to_mask_clearance 0)
@@ -592,7 +592,7 @@
     (property "ki_keywords" "switch normally-open pushbutton push-button")
     (path "/415745d0-56e9-4293-a5b1-285898bcd120")
     (attr smd)
-    (fp_text reference "SW1" (at 0 -2.6 -90) (layer "F.SilkS") hide
+    (fp_text reference "SW1" (at 0 -2.6 90) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp ce31757d-220d-4950-bc23-f61858cc7b16)
     )
@@ -600,7 +600,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 159aafc8-2651-47d6-9e9d-09e98ffb0222)
     )
-    (fp_text user "${REFERENCE}" (at 0 0 -90) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0 0 90) (layer "F.Fab")
         (effects (font (size 0.6 0.6) (thickness 0.09)))
       (tstamp 67b8c51e-2cc0-4959-bdb7-26791faefe1f)
     )
@@ -652,8 +652,8 @@
       (net 1 "/~{RST}") (pinfunction "2") (pintype "passive") (tstamp 5511934c-73f7-40fd-80a5-75f9ce2b686a))
     (pad "2" smd rect (at 2.075 1.075 270) (size 1.05 0.65) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 1 "/~{RST}") (pinfunction "2") (pintype "passive") (tstamp 36db62ca-c080-4122-b7ab-4afd38972a44))
-    (model "${KICAD6_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPST_PTS810.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD7_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPST_EVQP2.step"
+      (offset (xyz 0 0 0.2))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -927,7 +927,7 @@
     (fp_line (start 2 2) (end -2 2)
       (stroke (width 0.1) (type solid)) (layer "F.Fab") (tstamp e64715ea-76ac-4cc4-9847-cb7e40b347d9))
     (pad "1" smd custom (at -1.9975 -1.5 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 28 "/PC14") (pinfunction "PC14") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 28 "/PC14") (pinfunction "PC14") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -951,7 +951,7 @@
     (pad "6" smd roundrect (at -1.9375 1 270) (size 0.875 0.25) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
       (net 7 "/PA0") (pinfunction "PA0") (pintype "bidirectional") (tstamp 2d2cd7e2-c0f7-4081-9166-52df343426b3))
     (pad "7" smd custom (at -1.9975 1.5 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 8 "/PA1") (pinfunction "PA1") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 8 "/PA1") (pinfunction "PA1") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -965,7 +965,7 @@
           (width 0.09) (fill yes))
       ) (tstamp 44a71728-7d7a-4f6a-9414-ff3a062c50a0))
     (pad "8" smd custom (at -1.5 1.9975 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 9 "/PA2") (pinfunction "PA2") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 9 "/PA2") (pinfunction "PA2") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -989,7 +989,7 @@
     (pad "13" smd roundrect (at 1 1.9375 270) (size 0.25 0.875) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
       (net 14 "/PA7") (pinfunction "PA7") (pintype "bidirectional") (tstamp fb1cc1b6-5aa6-4727-b622-d8ed08ba7c28))
     (pad "14" smd custom (at 1.5 1.9975 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 16 "/PB0") (pinfunction "PB0") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 16 "/PB0") (pinfunction "PB0") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -1003,7 +1003,7 @@
           (width 0.09) (fill yes))
       ) (tstamp 41f3d25d-2548-4ebf-bd9d-ec862f0b2475))
     (pad "15" smd custom (at 1.9975 1.5 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 17 "/PB1") (pinfunction "PB1") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 17 "/PB1") (pinfunction "PB1") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -1027,7 +1027,7 @@
     (pad "20" smd roundrect (at 1.9375 -1 270) (size 0.875 0.25) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
       (net 5 "/SWD_IO") (pinfunction "PA13") (pintype "bidirectional") (tstamp 7f890976-606f-443b-b0d0-4fb996bbd860))
     (pad "21" smd custom (at 1.9975 -1.5 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 6 "/SWD_CLK") (pinfunction "PA14") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 6 "/SWD_CLK") (pinfunction "PA14") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -1041,7 +1041,7 @@
           (width 0.09) (fill yes))
       ) (tstamp 0d7ca5bf-d0a2-48b8-8282-8b09b289fc1e))
     (pad "22" smd custom (at 1.5 -1.9975 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 24 "Net-(U1-PA15)") (pinfunction "PA15") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 24 "Net-(U1-PA15)") (pinfunction "PA15") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -1065,7 +1065,7 @@
     (pad "27" smd roundrect (at -1 -1.9375 270) (size 0.25 0.875) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
       (net 22 "/PB7") (pinfunction "PB7") (pintype "bidirectional") (tstamp dfb9fe6a-f78f-4c61-942e-1d71f1389c3b))
     (pad "28" smd custom (at -1.5 -1.9975 270) (size 0.136863 0.136863) (layers "F.Cu" "F.Paste" "F.Mask")
-      (net 23 "/PB8") (pinfunction "PB8") (pintype "bidirectional") (thermal_bridge_angle 45)
+      (net 23 "/PB8") (pinfunction "PB8") (pintype "bidirectional")
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
